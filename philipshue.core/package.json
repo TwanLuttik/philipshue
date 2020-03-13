@@ -1,0 +1,22 @@
+{
+  "name": "philipshue.core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index",
+  "scripts": {
+    "test": "node ./test/test.js",
+    "build": "uglifyjs lib/index.js -c",
+    "dev": "tsc-watch"
+  },
+  "keywords": [],
+  "author": "Twan Luttik",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "tsc-watch": "^4.1.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.7.5",
+    "babel": "^6.23.0"
+  }
+}
