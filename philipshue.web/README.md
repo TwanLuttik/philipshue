@@ -1,4 +1,4 @@
-# hue-io
+# philipshue.web
 
 ## Project setup
 ```

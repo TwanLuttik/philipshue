@@ -7,9 +7,11 @@
   "author": "Twan Luttik <twanluttik@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "web": "cd ./philipshue.web && vue-cli-service serve",
+    "web build": "cd ./philipshue.web && vue-cli-service build",
+    "core watch": "cd ./philipshue.core && tsc-watch",
+    "core build": "cd ./philipshue.core && uglifyjs lib/index.js -c",
+    "prep": "cd philipshue.core && yarn && cd .. && cd philipshue.web && yarn"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -28,6 +30,7 @@
   },
   "workspaces": [
     "philipshue.core/*",
-    "philipshue.web/*"
+    "philipshue.web/*",
+    "philipshue.logic/*"
   ]
 }
