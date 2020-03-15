@@ -1,6 +1,6 @@
 <template>
   <div>
-    Home
+    <button>Search</button>
   </div>
 </template>
 
