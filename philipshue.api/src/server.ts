@@ -2,9 +2,10 @@ import morgan from 'morgan';
 import express from 'express';
 import routes from './routes';
 import bp from 'body-parser'
-
+import models from './database/models/index';
 const app = express();
 
+models();
 
 // Logger
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
