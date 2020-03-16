@@ -2,14 +2,15 @@
 import express from 'express';
 
 // Routes imports
-import user from './account.route';
-
+import account from './account.route';
+import device from './device.route'
 
 
 const router = express.Router();
 
 
-router.use('/user', user);
+router.use('/account', account);
+router.use('/device', device);
 
 
 export default router;

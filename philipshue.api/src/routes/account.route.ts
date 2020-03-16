@@ -1,10 +1,12 @@
 import express from 'express';
-import { ACCOUNT_CONTROLLER} from '../controllers/account.controller';
+import ACCOUNT_CONTROLLER from '../controllers/account.controller';
 
 const router = express.Router();
 
-// Routes
+// Create an account
 router.post('/create', ACCOUNT_CONTROLLER.CREATE)
+
+// Login with an account
 router.post('/login', ACCOUNT_CONTROLLER.LOGIN)
 
 

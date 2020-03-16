@@ -34,7 +34,7 @@ const SET_PERMISSION = (req: any, res: any) => {
   })
 }
 
-export const ACCOUNT_CONTROLLER = {
+export default {
   CREATE,
   LOGIN,
   SET_PERMISSION

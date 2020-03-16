@@ -11,12 +11,10 @@ import { pool } from './index';
  */
 const CREATE = (uuid: string, username: string, password: string) => {
   return new Promise(async (resolve, rejects) => {
-    const query = {
-      text: 'INSERT INTO "account" (uuid, username, password) VALUES ($1, $2, $3)',
-      values: [uuid, username, password]
-    };
+    const query = 'INSERT INTO "account" (uuid, username, password) VALUES ($1, $2, $3)';
+    const options = [uuid, username, password];
   
-    await pool.query(query)
+    await pool.query(query, options)
       .then((e) => {
         if (e.rowCount === 1) return resolve(true);
         return resolve(false);
