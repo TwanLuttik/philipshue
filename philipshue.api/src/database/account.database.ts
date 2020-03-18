@@ -27,15 +27,30 @@ const CREATE = (uuid: string, username: string, password: string) => {
 };
 
 
+/**
+ * 
+ * 
+ * @param username 
+ */
+const GET_HASH = (username: string) => {
+  return new Promise((resolve, reject) => {
+    const query = 'SELECT password, username FROM account WHERE username = $1';
+    const options = [username]
 
-const LOGIN = (username: string, password: string) => {
-  const query = {
-    text: ''
-  }
+    pool.query(query, options)
+      .then((e) => {
+        if (e.rowCount > 0) return resolve(e.rows[0].password);
+        return resolve(false);
+      })
+      .catch((e) => {
+        return reject(e);
+      });
+
+  });
 };
 
 
 export default {
   CREATE,
-  LOGIN
+  GET_HASH
 }

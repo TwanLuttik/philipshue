@@ -1,0 +1,6 @@
+enum error {
+  USERNAME_NOT_FOUND = 'USERNAME_NOT_FOUND',
+  PASSWORD_INVALID = 'PASSWORD_INVALID'
+}
+
+export default error;
