@@ -1,8 +1,10 @@
 import morgan from 'morgan';
 import express from 'express';
-import routes from './routes';
 import bp from 'body-parser'
+import cookieParser from 'cookie-parser';
 import models from './database/models/index';
+import routes from './routes';
+
 const app = express();
 
 models();
@@ -14,11 +16,14 @@ app.use(bp.urlencoded({extended: false}));
 app.use(bp.json());
 
 
+app.use(cookieParser(process.env.COOKIE_SECRET))
+
 // Routes
-app.use('/', routes)
+app.use('/', routes);
 
 
 export default app;
+
 
 
 // app.use((req: any, res: any, next: any) => {

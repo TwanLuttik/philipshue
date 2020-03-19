@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
-import ACCOUNT_DB from '../database/account.database';
+import ACCOUNT_DB from '@api/controllers/account.controller';
 import ERROR from '../types/error';
 
 
@@ -42,7 +42,8 @@ const LOGIN = async (req: any, res: any) => {
         code: ERROR.USERNAME_NOT_FOUND
       }
     })
-  }
+  };
+
     
 
   // Compare hash
@@ -63,7 +64,8 @@ const LOGIN = async (req: any, res: any) => {
   });
 
 };
-8
+
+
 const SET_PERMISSION = (req: any, res: any) => {
   return res.status(200).json({
     message: 'login',

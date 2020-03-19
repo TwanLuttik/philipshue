@@ -3,7 +3,7 @@ import { pool } from './index';
 const ADD = (device_id: string) => {
   return new Promise((resolve, reject) => {
     const query = 'INSERT INTO device (id, created_at) VALUES ($1, $2);';
-    const options = [device_id, new Date().getTime() ]
+    const options = [device_id, new Date().getTime()]
 
     pool.query(query, options) 
       .then((e) => {

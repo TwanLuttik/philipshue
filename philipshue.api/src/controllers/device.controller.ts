@@ -1,4 +1,4 @@
-import DEVICE_DB from '../database/device.database'
+import DEVICE_DB from '../database/device.db'
 
 const ADD = (req: any, res: any) => {
   DEVICE_DB.ADD(req.body.id)

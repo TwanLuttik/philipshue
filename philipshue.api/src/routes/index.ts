@@ -1,5 +1,6 @@
 // Global imports
 import express from 'express';
+import auth from 'app/helpers/authCheck';
 
 // Routes imports
 import account from './account.route';
@@ -9,8 +10,8 @@ import device from './device.route'
 const router = express.Router();
 
 
-router.use('/account', account);
-router.use('/device', device);
+router.use('/account', auth, account);
+router.use('/device', auth, device);
 
 
 export default router;

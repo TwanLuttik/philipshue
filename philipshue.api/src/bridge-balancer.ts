@@ -1,4 +1,4 @@
-import DEVICE from './database/device.database';
+import DEVICE from './database/device.db';
 
 
 /**

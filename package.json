@@ -12,7 +12,8 @@
     "web.build": "cd ./philipshue.web && vue-cli-service build",
     "core.dev": "cd ./philipshue.core && yarn dev",
     "core.build": "cd ./philipshue.core && uglifyjs lib/index.js -c",
-    "prep": "cd philipshue.core && yarn && cd .. && cd philipshue.web && yarn"
+    "prep": "cd philipshue.core && yarn && cd .. && cd philipshue.web && yarn",
+    "mobile.bundle": "cd philipshue.mobile && yarn react-native start"
   },
   "dependencies": {
     "core-js": "^3.6.4",

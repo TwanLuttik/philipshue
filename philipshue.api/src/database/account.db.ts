@@ -10,17 +10,17 @@ import { pool } from './index';
  * @param permissions 
  */
 const CREATE = (uuid: string, username: string, password: string) => {
-  return new Promise(async (resolve, rejects) => {
+  return new Promise(async (resolve, reject) => {
     const query = 'INSERT INTO "account" (uuid, username, password) VALUES ($1, $2, $3)';
     const options = [uuid, username, password];
   
-    await pool.query(query, options)
+    pool.query(query, options)
       .then((e) => {
         if (e.rowCount === 1) return resolve(true);
         return resolve(false);
       })
       .catch((e) => {
-        return rejects(e);
+        return reject(e);
       });
 
   }) 
