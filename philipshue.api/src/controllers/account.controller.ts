@@ -1,8 +1,7 @@
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
 import ERROR from '../types/error';
-import DB from 'db/index';
-
+import DB from '../database';
 
 const CREATE = async (req: any, res: any) => {
 
@@ -73,7 +72,7 @@ const SET_PERMISSION = (req: any, res: any) => {
   })
 }
 
-export {
+export default {
   CREATE,
   LOGIN,
   SET_PERMISSION

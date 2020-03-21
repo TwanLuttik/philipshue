@@ -1,6 +1,6 @@
 import { pool } from '../index';
 
-export = async () => {
+export default async () => {
   return new Promise(async (resolve, reject) => {
     const query = {
       text: `reate unlogged table if not exists device

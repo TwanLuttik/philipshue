@@ -2,7 +2,7 @@ import account from './account.model';
 import device from './device.model';
 
 
-export = async () => {
+export default async () => {
   // await account();
   // await device();
 

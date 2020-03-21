@@ -10,11 +10,9 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "controllers/*": ["./src/controllers/*"],
-      "db/*": ["./src/database/*"],
-      "helpers/*": ["./src/helpers/*"],
-      "routes/*": ["./src/routes/*"],
-      "root/*": ["src/*"]
+      "*": [
+        "node_modules"
+      ]
     },
   },
   "include": [

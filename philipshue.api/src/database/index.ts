@@ -7,14 +7,12 @@ export const pool = new Pool({
 	password: process.env.PG_PASSWORD
 });
 
-import * as DEVICE from './device.db';
-import * as ACCOUNT from './account.db';
-import * as SESSION from './session.db';
+import DEVICE from './device.db';
+import ACCOUNT from './account.db';
+import SESSION from './session.db';
 
-const DB = {
+export default {
 	DEVICE,
 	ACCOUNT,
 	SESSION
 }
-
-export default DB;

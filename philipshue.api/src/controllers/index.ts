@@ -1,5 +1,5 @@
-import * as DEVICE from './device.controller';
-import * as ACCOUNT from './account.controller';
+import DEVICE from './device.controller';
+import ACCOUNT from './account.controller';
 
 const CONTROLLER = {
   DEVICE,

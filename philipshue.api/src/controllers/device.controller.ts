@@ -1,4 +1,4 @@
-import DB from 'db/index';
+import DB from '../database';
 
 const ADD = (req: any, res: any) => {
   DB.DEVICE.ADD(req.body.id)
@@ -64,7 +64,7 @@ const GET_ALL = (req: any, res: any) => {
     })
 }
 
-export {
+export default {
   ADD,
   REMOVE,
   SET_NAME,

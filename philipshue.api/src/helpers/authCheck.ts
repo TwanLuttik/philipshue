@@ -1,8 +1,8 @@
-import SESSION_DB from '@/db/session.db';
+import DB from '../database';
 
 export default async (req: any, res: any, next: any) => {
 
-  await SESSION_DB.IS_VALID(req.cookie)
+  await DB.SESSION.IS_VALID(req.cookie)
 
   console.log(req.cookie);
   next();
