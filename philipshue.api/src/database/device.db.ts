@@ -64,7 +64,7 @@ const GET_ALL = () => {
 }
 
 
-export default {
+export {
   ADD,
   REMOVE,
   SET_NAME,

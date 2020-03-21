@@ -1,6 +1,6 @@
 // Global imports
 import express from 'express';
-import auth from 'app/helpers/authCheck';
+import auth from '../helpers/authCheck'
 
 // Routes imports
 import account from './account.route';

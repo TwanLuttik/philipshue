@@ -1,7 +1,7 @@
-import DEVICE_DB from '../database/device.db'
+import DB from 'db/index';
 
 const ADD = (req: any, res: any) => {
-  DEVICE_DB.ADD(req.body.id)
+  DB.DEVICE.ADD(req.body.id)
     .then((e) => {
       return res.status(200).json({
         message: 'Device added'
@@ -17,7 +17,7 @@ const ADD = (req: any, res: any) => {
 }
 
 const REMOVE = (req: any, res: any) => {
-  DEVICE_DB.REMOVE(req.params.id)
+  DB.DEVICE.REMOVE(req.params.id)
     .then((e) => {
       return res.status(200).json({
         message: 'Device removed'
@@ -33,7 +33,7 @@ const REMOVE = (req: any, res: any) => {
 }
 
 const SET_NAME = (req: any, res: any) => {
-  DEVICE_DB.SET_NAME(req.params.id, req.params.name)
+  DB.DEVICE.SET_NAME(req.params.id, req.params.name)
     .then((e) => {
       return res.status(200).json({
         message: 'Device name set'
@@ -49,7 +49,7 @@ const SET_NAME = (req: any, res: any) => {
 };
 
 const GET_ALL = (req: any, res: any) => {
-  DEVICE_DB.GET_ALL()
+  DB.DEVICE.GET_ALL()
     .then((e) => {
       return res.status(200).json({
         data: e
@@ -64,7 +64,7 @@ const GET_ALL = (req: any, res: any) => {
     })
 }
 
-export default {
+export {
   ADD,
   REMOVE,
   SET_NAME,

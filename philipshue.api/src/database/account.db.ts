@@ -50,7 +50,7 @@ const GET_HASH = (username: string) => {
 };
 
 
-export default {
+export {
   CREATE,
   GET_HASH
 }

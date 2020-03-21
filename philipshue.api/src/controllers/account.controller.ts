@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
-import ACCOUNT_DB from '@api/controllers/account.controller';
 import ERROR from '../types/error';
+import DB from 'db/index';
 
 
 const CREATE = async (req: any, res: any) => {
@@ -10,7 +10,7 @@ const CREATE = async (req: any, res: any) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
 
     // Create the account into the database
-    ACCOUNT_DB.CREATE(uuidv4(), req.body.username, hash)
+    DB.ACCOUNT.CREATE(uuidv4(), req.body.username, hash)
     .then((r) => {
       return res.status(200).json({
         message: 'create',
@@ -33,7 +33,7 @@ const LOGIN = async (req: any, res: any) => {
   const session_token = uuidv4(username);
 
   // Get the password hash of the username 
-  const hash = await ACCOUNT_DB.GET_HASH(username);
+  const hash = await DB.ACCOUNT.GET_HASH(username);
 
   // Username not found
   if (!hash) {
@@ -73,7 +73,7 @@ const SET_PERMISSION = (req: any, res: any) => {
   })
 }
 
-export default {
+export {
   CREATE,
   LOGIN,
   SET_PERMISSION

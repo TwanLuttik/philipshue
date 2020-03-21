@@ -7,13 +7,15 @@
   "author": "Twan Luttik <twanluttik@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "api": "cd ./philipshue.api && yarn dev",
-    "web": "cd ./philipshue.web && vue-cli-service serve",
+    "api.start": "cd ./philipshue.api && yarn dev",
+    "web.start": "cd ./philipshue.web && vue-cli-service serve",
     "web.build": "cd ./philipshue.web && vue-cli-service build",
+    "app.dev": "cd ./philipshue.electron && yarn dev",
     "core.dev": "cd ./philipshue.core && yarn dev",
     "core.build": "cd ./philipshue.core && uglifyjs lib/index.js -c",
     "prep": "cd philipshue.core && yarn && cd .. && cd philipshue.web && yarn",
-    "mobile.bundle": "cd philipshue.mobile && yarn react-native start"
+    "mobile.bundle": "cd philipshue.mobile && yarn react-native start",
+    "mobile.pods": "cd philipshue.mobile/ios && pod install"
   },
   "dependencies": {
     "core-js": "^3.6.4",

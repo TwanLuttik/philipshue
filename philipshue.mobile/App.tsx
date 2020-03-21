@@ -26,6 +26,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Profile from './src/screens/profile';
+import Auth from './src/screens/auth/auth';
+import RootRouter from './src/routers/RootRouter';
+import BottomBar from './src/parts/BottomBar';
+
 declare var global: {HermesInternal: null | {}};
 
 const App = () => {
@@ -34,7 +39,9 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
 
       <SafeAreaView>
-        <Text>Test</Text>
+        <RootRouter />
+        <BottomBar />
+        {/* <Auth /> */}
         {/* <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
