@@ -4,17 +4,19 @@ import { pool } from './index';
 /**
  * Create an new account
  * 
- * @param uuid 
+ * @param id 
  * @param username 
  * @param password 
  * @param permissions 
  */
-const CREATE = (uuid: string, username: string, password: string) => {
+const CREATE = (id: string, username: string, password: string) => {
   return new Promise(async (resolve, reject) => {
-    const query = 'INSERT INTO "account" (uuid, username, password) VALUES ($1, $2, $3)';
-    const options = [uuid, username, password];
+    const query = {
+      text: 'INSERT INTO "account" (id, username, password) VALUES ($1, $2, $3)',
+      values: [id, username, password]
+    };
   
-    pool.query(query, options)
+    pool.query(query)
       .then((e) => {
         if (e.rowCount === 1) return resolve(true);
         return resolve(false);
@@ -32,14 +34,16 @@ const CREATE = (uuid: string, username: string, password: string) => {
  * 
  * @param username 
  */
-const GET_HASH = (username: string) => {
+const GET_BY_USERNAME = (username: string) => {
   return new Promise((resolve, reject) => {
-    const query = 'SELECT password, username FROM account WHERE username = $1';
-    const options = [username]
+    const query = {
+      text:'SELECT * FROM account WHERE username = $1',
+      values: [username]
+    };
 
-    pool.query(query, options)
+    pool.query(query)
       .then((e) => {
-        if (e.rowCount > 0) return resolve(e.rows[0].password);
+        if (e.rowCount > 0) return resolve(e.rows[0]);
         return resolve(false);
       })
       .catch((e) => {
@@ -52,5 +56,5 @@ const GET_HASH = (username: string) => {
 
 export default {
   CREATE,
-  GET_HASH
+  GET_BY_USERNAME
 }

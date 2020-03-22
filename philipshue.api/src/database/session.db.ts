@@ -37,7 +37,7 @@ const REMOVE = (session_token: string,) => {
 
 const IS_VALID = (session_token: string) => {
   return new Promise((resolve, reject) => {
-    const query = 'SELECT * FROM session_tokens WHERE session_token = $1;';
+    const query = 'SELECT * FROM session_tokens WHERE token = $1;';
     const options = [session_token];
 
     pool.query(query, options)
