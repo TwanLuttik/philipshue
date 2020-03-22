@@ -15,6 +15,7 @@
     "core.build": "cd ./philipshue.core && uglifyjs lib/index.js -c",
     "prep": "cd philipshue.core && yarn && cd .. && cd philipshue.web && yarn",
     "mobile.bundle": "cd philipshue.mobile && yarn react-native start",
+    "mobile.ios": "cd philipshue.mobile && yarn ios",
     "mobile.pods": "cd philipshue.mobile/ios && pod install"
   },
   "dependencies": {
