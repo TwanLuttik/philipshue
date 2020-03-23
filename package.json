@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "api.start": "cd ./philipshue.api && yarn dev",
-    "web.start": "cd ./philipshue.web && vue-cli-service serve",
+    "web.start": "cd ./philipshue.web && yarn serve",
     "web.build": "cd ./philipshue.web && vue-cli-service build",
     "app.dev": "cd ./philipshue.electron && yarn dev",
     "core.dev": "cd ./philipshue.core && yarn dev",

@@ -12,7 +12,7 @@ router.post('/register', DEVICE.ADD);
 router.delete('/:id', DEVICE.REMOVE);
 
 // Set a device name
-router.patch('/:id/name/:name', DEVICE.SET_NAME)
+router.patch('/:id/name', DEVICE.SET_NAME)
 
 // Get all thr devices
 router.get('/', DEVICE.GET_ALL)
